@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>news</ion-title>
+    <ion-title>News</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-app>
+    <ion-content fullscreen>
+      <ion-card *ngFor="let news of newsList?.articles">
+        <img [src]="news.urlToImage" />
+        <ion-card-header>
+          <ion-card-title>{{ news.source.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>{{ news.title }}</ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ion-app>
 </ion-content>
